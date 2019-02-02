@@ -12,64 +12,84 @@ public static void main(String[] args) {
 	hi.setRandomPenColor();
 	
 	//-----------
-	drawHouse(hi, 107);
+	drawHouse(hi, "small");
 	grenGrass(hi);
-	drawBuilding(hi,300);
+	drawBuilding(hi,"medium");
 	hi.turn(270);
 	grenGrass(hi);
 	hi.turn(270);
 	//-----------
-	drawHouse(hi, 120);
+	drawHouse(hi, "medium");
 	grenGrass(hi);
-	drawBuilding(hi,246);
+	drawBuilding(hi,"large");
 	hi.turn(270);
 	grenGrass(hi);
 	hi.turn(270);
 	//-----------
-	drawHouse(hi, 68);
+	drawHouse(hi, "medium");
 	grenGrass(hi);
-	drawBuilding(hi,260);
+	drawBuilding(hi,"large");
 	hi.turn(270);
 	grenGrass(hi);
 	hi.turn(270);
 	//-----------
-	drawHouse(hi, 21);
+	drawHouse(hi, "small");
 	grenGrass(hi);
-	drawBuilding(hi,235);
+	drawBuilding(hi,"large");
 	hi.turn(270);
 	grenGrass(hi);
 	hi.turn(270);
 	//-----------
-	drawHouse(hi, 95);
+	drawHouse(hi, "medium");
 	grenGrass(hi);
-	drawBuilding(hi,266);
+	drawBuilding(hi,"medium");
 	hi.turn(270);
 	grenGrass(hi);
 	hi.turn(270);
 	//-----------
-	drawHouse(hi, 73);
+	drawHouse(hi, "small");
 	grenGrass(hi);
-	drawBuilding(hi,287);
+	drawBuilding(hi,"medium");
 	hi.turn(270);
 }
-public static void drawHouse(Robot hi, int height) {
+public static void drawHouse(Robot hi, String height) {
+	int size = 214000000;
+	if(height.equals("small")) {
+	size = 60;
+	}
+	else if(height.equals("medium")) {
+		size = 120;
+	}
+	else if(height.equals("large")) {
+		size = 240;
+	}
 	
-	hi.move(height);
+	hi.move(size);
 	hi.turn(30);
 	hi.move(40);
 hi.turn(120);
 hi.move(40);
 hi.turn(30);
-hi.move(height);
+hi.move(size);
 }
-public static void drawBuilding(Robot hi, int height) {
+public static void drawBuilding(Robot hi, String height) {
+	int size = 214000000;
+	if(height.equals("small")) {
+	size = 60;
+	}
+	else if(height.equals("medium")) {
+		size = 120;
+	}
+	else if(height.equals("large")) {
+		size = 240;
+	}
 	hi.setRandomPenColor();
 	hi.turn(270);
-	hi.move(height);
+	hi.move(size);
 	hi.turn(90);
 	hi.move(50);
 	hi.turn(90);
-	hi.move(height);
+	hi.move(size);
 	hi.turn(90);
 }
 public static void grenGrass(Robot hi) {
