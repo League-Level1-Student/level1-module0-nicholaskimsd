@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	JackInTheBox fc = new JackInTheBox();
 	fc.showButton();
 	
-
+fc.playSound("homer-woohoo.wav");
 }
 JFrame frame = new JFrame();
 JPanel panel = new JPanel();
@@ -67,6 +67,16 @@ private JLabel createLabelImage(String fileName) {
     } catch (Exception e) {
          System.err.println("Could not find image " + fileName);
          return new JLabel();
+    }
+}
+
+
+private void playSound(String soundFile) { 
+    try {
+         AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
+         sound.play();
+    } catch (Exception e) {
+         e.printStackTrace();
     }
 }
 }
