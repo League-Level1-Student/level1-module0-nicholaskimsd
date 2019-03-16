@@ -16,9 +16,10 @@ public class Sound_Effects_Machine implements ActionListener{
 }
 JFrame frame = new JFrame();
 JPanel panel = new JPanel();
-JButton button = new JButton();
 JButton leftButton = new JButton();
+JButton button = new JButton();
 JButton rightButton = new JButton();
+
 
 
 public void showButton() {
@@ -35,6 +36,7 @@ public void showButton() {
 	panel.add(rightButton);
 	rightButton.setText("CLICK");
 	rightButton.addActionListener(this);
+	frame.pack();
 
     
 }
@@ -56,9 +58,12 @@ public void actionPerformed(ActionEvent e) {
 	if(leftButton==pressed) {
 	playSound("heavy-rain-daniel_simon.wav");
 	}
-	else if(rightButton==pressed) {
-	playSound("marbles-daniel_simon");
-;
+	else if(button==pressed) {
+	playSound("marbles-daniel_simon.wav");
+
+	}
+	else if (rightButton==pressed) {
+		playSound("flock-of-seagulls_daniel-simion.wav");
 	}
 	
 
